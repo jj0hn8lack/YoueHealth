@@ -1,0 +1,162 @@
+﻿
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Скидки, купоны и акции от Happy Vehicle. Самые выгодные и эксклюзивные скидки только у нас! Все купоны актуальны на текущий день.">
+    <meta name="author" content="">
+    <link rel="icon" href="/style/images/icon.jpg">
+    <link href="../style/fonts/fonts.css" rel="stylesheet">
+
+    <title>Купоны и акции - Happy Vehicle </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../style/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="../style/css/style.css">
+    <link rel="stylesheet" href="../style/css/owl.css">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(71114236, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/71114236" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- Header -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><h2>Happy <em>Vehicle</em></h2></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                Главная
+                            </a>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" href="products.html">Товары </a></li>
+                        <li class="nav-item active"><a class="nav-link" href="coupons.html">Акции <span class="sr-only">(current)</span></a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-heading about-heading header-text" style="background-image: url(../style/images/heading-6-1920x500.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-content">
+                        <h4>С купонами дешевле</h4>
+                        <h2>Купоны и акции</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row" id="couponsBox">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal More Info -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Условия акции</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="inner-content">
+                        <p>Copyright © 2020 Happy Vehicle - все права защищены </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <input id="currentPage" type="hidden" value="" />
+    <input id="currentQuery" type="hidden" value="" />
+    <input id="categoryId" type="hidden" value="" />
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../src/jquery.min.js"></script>
+    <script src="../src/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="../src/custom.js"></script>
+    <script src="../src/owl.js"></script>
+    <script src="../src/coupons.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#exampleModal').on('show.bs.modal', function (event) {
+                let button = $(event.relatedTarget);
+                let recipient = button.data('description');
+                let modal = $(this);
+                modal.find('.modal-body p').text(recipient);
+            })
+            fillCouponsTable();
+        });
+    </script>
+</body>
+
+</html>

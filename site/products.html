@@ -1,0 +1,191 @@
+﻿
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Список доступных товаров наших партнёров на Happy Vehicle! Не упусти свой шанс совершить вгодную покупку.">
+    <link rel="icon" href="/style/images/icon.jpg">
+    <link href="../style/fonts/fonts.css" rel="stylesheet">
+
+    <title>Happy Vehicle</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../style/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="../style/css/style.css">
+    <link rel="stylesheet" href="../style/css/owl.css">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(71114236, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/71114236" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- Header -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><h2>Happy <em>Vehicle</em></h2></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                Главная
+                            </a>
+                        </li>
+
+                        <li class="nav-item active"><a class="nav-link" href="products.html">Товары <span class="sr-only">(current)</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="coupons.html">Акции</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-heading about-heading header-text" style="background-image: url(../style/images/heading-6-1920x500.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-content">
+                        <h4>У нас самые выгодные условия</h4>
+                        <h2>Товары</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <div class="form-group">
+                            <h5>Поиск товара</h5>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input id="searchBox" type="text" class="form-control" placeholder="Поиск" aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button onclick="searchButtonClicked()" class="filled-button" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                <button class="filled-button" data-toggle="modal" data-target="#categoriesModal" type="button">Категории</button>
+                            </div>
+                        </div>
+                        <h5 style="margin-bottom:5px;" id="categoriesLbl">Все категории</h5>
+                        <h6 style="margin-top:5px;margin-bottom:5px;" id="foundCnt"></h6>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="row" id="productsBox">
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="pages" id="paginationBox">
+                                <li><a id="paginationButtonPrevious" href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                                <li><a id="paginationButtonHome">1</a></li>
+                                <li class="active"><a id="currentPageButton" href="#">2</a></li>
+                                <li><a id="paginationButtonNext" href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Categories -->
+    <div class="modal fade" id="categoriesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Категории</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group" id="categoriesList">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="inner-content">
+                        <p>Copyright © 2020 Happy Vehicle - все права защищены </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <input id="currentPage" type="hidden" value="" />
+    <input id="currentQuery" type="hidden" value="" />
+    <input id="categoryId" type="hidden" value="" />
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../src/jquery.min.js"></script>
+    <script src="../src/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="../src/custom.js"></script>
+    <script src="../src/owl.js"></script>
+    <script src="../src/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            fillProductsTable();
+
+            $("#searchBox").keyup(function (event) {
+                if (event.keyCode === 13) {
+                    searchButtonClicked();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
